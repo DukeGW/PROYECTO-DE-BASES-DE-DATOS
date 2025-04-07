@@ -21,6 +21,8 @@
 
 Bienvenido a mi proyecto final, vamos a crear una base de datos desde 0. Les mostrare paso a paso como lo haremos con el objetivo de ayudar a la empresa GlobarlMArt tener sus datos de cliente, productos y pedidos mas organizados. 
 
+---
+
 ###Análisis del Enunciado
 
 Sistema de Gestión de Compras para GlobalMart Ltda

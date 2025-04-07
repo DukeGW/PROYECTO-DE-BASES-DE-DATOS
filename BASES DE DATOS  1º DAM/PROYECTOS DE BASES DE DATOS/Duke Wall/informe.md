@@ -25,14 +25,9 @@ Bienvenido a mi proyecto final, vamos a crear una base de datos desde 0. Les mos
 
 Sistema de Gestión de Compras para GlobalMart Ltda
 
-GlobalMart es una empresa que están comprometidos con la eficiencia y la transparencia de sus operaciones de compras. Para optimizar el procesos y garantizar un mejor control sobre las actividades de adquisición, buscan implementar un sistema de gestión de compras integral.
-Nosotros vamos a diseñar un sistema que administre eficientemente información sobre proveedores, productos y pedidos realizados.
-
-
-📑 Análisis del Enunciado
-
-Sistema de Gestión de Compras para GlobalMart Ltda
 "En GlobalMart Ltda., estamos comprometidos con la eficiencia y la transparencia en nuestras operaciones de compras. Para optimizar nuestros procesos y garantizar un mejor control sobre nuestras actividades de adquisición, buscamos implementar un sistema de gestión de compras integral."
+Nos piden diseñar un sistema que administre eficientemente información sobre proveedores, productos y pedidos realizados.
+
 ---
 ###Modelo Conceptual
 

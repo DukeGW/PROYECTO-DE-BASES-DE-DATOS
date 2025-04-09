@@ -101,8 +101,6 @@ CREATE TABLE IF NOT EXISTS `globalmart`.`productos` (
   `idProducto` INT NOT NULL AUTO_INCREMENT,
   `idProveedor` INT NOT NULL,
   `nombreProducto` VARCHAR(45) NOT NULL,
-  `envase` ENUM('fragil', 'noFragil') NOT NULL,
-  `codigoDeBarra` INT NOT NULL,
   `fechaCaducidad` DATE NULL,
   `stock` INT NOT NULL,
   `precioProducto` DECIMAL NOT NULL,

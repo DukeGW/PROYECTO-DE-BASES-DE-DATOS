@@ -68,7 +68,6 @@ DROP TABLE IF EXISTS `globalmart`.`pedido` ;
 CREATE TABLE IF NOT EXISTS `globalmart`.`pedido` (
   `idPedido` INT NOT NULL AUTO_INCREMENT,
   `idProducto` INT NOT NULL,
-  `idCliente` INT NOT NULL,
   `fechaDePedido` DATE NOT NULL,
   `estadoDePedido` ENUM('preparando', 'reparto', 'entregado') NOT NULL,
   `cliente_idCliente` INT NOT NULL,
@@ -98,7 +97,6 @@ DROP TABLE IF EXISTS `globalmart`.`productos` ;
 
 CREATE TABLE IF NOT EXISTS `globalmart`.`productos` (
   `idProducto` INT NOT NULL AUTO_INCREMENT,
-  `idProveedor` INT NOT NULL,
   `nombreProducto` VARCHAR(45) NOT NULL,
   `fechaCaducidad` DATE NULL,
   `stock` INT NOT NULL,
@@ -126,3 +124,4 @@ CREATE INDEX `fk_productos_pedido1_idx` ON `globalmart`.`productos` (`pedido_idP
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+

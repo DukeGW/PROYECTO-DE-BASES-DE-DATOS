@@ -38,7 +38,6 @@ CREATE TABLE IF NOT EXISTS `globalmart`.`cliente` (
   `idCliente` INT NOT NULL AUTO_INCREMENT,
   `tipoCliente` ENUM('particular', 'empresa') NOT NULL,
   `nombreCliente` VARCHAR(50) NOT NULL,
-  `identificadorCliente` INT NOT NULL,
   `preferenciaDePago` ENUM('MasterCard', 'Visa') NULL,
   `telefonoCliente` INT NULL,
   `correoCliente` VARCHAR(45) NULL,
@@ -122,11 +121,6 @@ ENGINE = InnoDB;
 CREATE INDEX `fk_productos_proveedor_idx` ON `globalmart`.`productos` (`proveedor_idProveedor` ASC) VISIBLE;
 
 CREATE INDEX `fk_productos_pedido1_idx` ON `globalmart`.`productos` (`pedido_idPedido` ASC) VISIBLE;
-
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

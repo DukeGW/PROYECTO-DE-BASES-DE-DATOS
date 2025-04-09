@@ -70,24 +70,24 @@ CREATE TABLE IF NOT EXISTS `globalmart`.`pedido` (
   `idProducto` INT NOT NULL,
   `fechaDePedido` DATE NOT NULL,
   `estadoDePedido` ENUM('preparando', 'reparto', 'entregado') NOT NULL,
-  `cliente_idCliente` INT NOT NULL,
-  `detallePedido_idDetallePedido` INT NOT NULL,
+  `idCliente` INT NOT NULL,
+  `idDetallePedido` INT NOT NULL,
   PRIMARY KEY (`idPedido`),
   CONSTRAINT `fk_pedido_cliente1`
-    FOREIGN KEY (`cliente_idCliente`)
+    FOREIGN KEY (`idCliente`)
     REFERENCES `globalmart`.`cliente` (`idCliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_pedido_detallePedido1`
-    FOREIGN KEY (`detallePedido_idDetallePedido`)
+    FOREIGN KEY (`idDetallePedido`)
     REFERENCES `globalmart`.`detallePedido` (`idDetallePedido`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_pedido_cliente1_idx` ON `globalmart`.`pedido` (`cliente_idCliente` ASC) VISIBLE;
+CREATE INDEX `fk_pedido_cliente1_idx` ON `globalmart`.`pedido` (`idCliente` ASC) VISIBLE;
 
-CREATE INDEX `fk_pedido_detallePedido1_idx` ON `globalmart`.`pedido` (`detallePedido_idDetallePedido` ASC) VISIBLE;
+CREATE INDEX `fk_pedido_detallePedido1_idx` ON `globalmart`.`pedido` (`idDetallePedido` ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -97,28 +97,28 @@ DROP TABLE IF EXISTS `globalmart`.`productos` ;
 
 CREATE TABLE IF NOT EXISTS `globalmart`.`productos` (
   `idProducto` INT NOT NULL AUTO_INCREMENT,
+  `idProveedor` INT NOT NULL,
   `nombreProducto` VARCHAR(45) NOT NULL,
   `fechaCaducidad` DATE NULL,
   `stock` INT NOT NULL,
   `precioProducto` DECIMAL NOT NULL,
-  `proveedor_idProveedor` INT NOT NULL,
-  `pedido_idPedido` INT NOT NULL,
+  `idPedido` INT NOT NULL,
   PRIMARY KEY (`idProducto`),
   CONSTRAINT `fk_productos_proveedor`
-    FOREIGN KEY (`proveedor_idProveedor`)
+    FOREIGN KEY (`idProveedor`)
     REFERENCES `globalmart`.`proveedor` (`idProveedor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_productos_pedido1`
-    FOREIGN KEY (`pedido_idPedido`)
+    FOREIGN KEY (`idPedido`)
     REFERENCES `globalmart`.`pedido` (`idPedido`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_productos_proveedor_idx` ON `globalmart`.`productos` (`proveedor_idProveedor` ASC) VISIBLE;
+CREATE INDEX `fk_productos_proveedor_idx` ON `globalmart`.`productos` (`idProveedor` ASC) VISIBLE;
 
-CREATE INDEX `fk_productos_pedido1_idx` ON `globalmart`.`productos` (`pedido_idPedido` ASC) VISIBLE;
+CREATE INDEX `fk_productos_pedido1_idx` ON `globalmart`.`productos` (`idPedido` ASC) VISIBLE;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

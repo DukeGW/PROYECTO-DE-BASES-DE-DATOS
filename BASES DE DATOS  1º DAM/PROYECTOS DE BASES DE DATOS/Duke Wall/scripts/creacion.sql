@@ -1,5 +1,5 @@
 -- MySQL Workbench Synchronization
--- Generated: 2025-04-10 18:18
+-- Generated: 2025-04-10 19:41
 -- Model: New Model
 -- Version: 1.0
 -- Project: Name of the project
@@ -9,69 +9,46 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
-CREATE SCHEMA IF NOT EXISTS `GlobalMart` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `Globlmart` DEFAULT CHARACTER SET utf8 ;
 
-CREATE TABLE IF NOT EXISTS `GlobalMart`.`proveedor` (
-  `idProveedor` INT(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `Globlmart`.`Proveedor` (
+  `idProveedor` INT(11) NOT NULL,
   `cif` VARCHAR(10) NOT NULL,
   `correo` VARCHAR(25) NOT NULL,
   `numeroDeContacto` INT(11) NOT NULL,
-  `direccionProveedor` TEXT NOT NULL,
+  `direccionProveedor` MEDIUMTEXT NOT NULL,
   PRIMARY KEY (`idProveedor`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE TABLE IF NOT EXISTS `GlobalMart`.`productos` (
+CREATE TABLE IF NOT EXISTS `Globlmart`.`Producto` (
   `idProducto` INT(11) NOT NULL AUTO_INCREMENT,
   `nombreProducto` VARCHAR(45) NOT NULL,
-  `fechaCaducidad` DATE NULL DEFAULT NULL,
+  `fecchaCaducidad` DATE NULL DEFAULT NULL,
   `stock` INT(11) NOT NULL,
   `precioProducto` DECIMAL NOT NULL,
-  `proveedor_idProveedor` INT(11) NOT NULL,
-  `pedido_idPedido` INT(11) NOT NULL,
+  `idProveedor` INT(11) NOT NULL,
+  `idPedido` INT(11) NOT NULL,
   PRIMARY KEY (`idProducto`),
-  INDEX `fk_productos_proveedor_idx` (`proveedor_idProveedor` ASC) VISIBLE,
-  INDEX `fk_productos_pedido1_idx` (`pedido_idPedido` ASC) VISIBLE,
-  CONSTRAINT `fk_productos_proveedor`
-    FOREIGN KEY (`proveedor_idProveedor`)
-    REFERENCES `GlobalMart`.`proveedor` (`idProveedor`)
+  INDEX `fk_Producto_Proveedor_idx` (`idProveedor` ASC) VISIBLE,
+  INDEX `fk_Producto_Pedido1_idx` (`idPedido` ASC) VISIBLE,
+  CONSTRAINT `fk_Producto_Proveedor`
+    FOREIGN KEY (`idProveedor`)
+    REFERENCES `Globlmart`.`Proveedor` (`idProveedor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_productos_pedido1`
-    FOREIGN KEY (`pedido_idPedido`)
-    REFERENCES `GlobalMart`.`pedido` (`idPedido`)
+  CONSTRAINT `fk_Producto_Pedido1`
+    FOREIGN KEY (`idPedido`)
+    REFERENCES `Globlmart`.`Pedido` (`idPedido`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE TABLE IF NOT EXISTS `GlobalMart`.`pedido` (
-  `idPedido` INT(11) NOT NULL AUTO_INCREMENT,
-  `idProducto` INT(11) NOT NULL,
-  `fechaDePedido` DATE NOT NULL,
-  `estadoDePedido` ENUM('preparando', 'reparto', 'entregado') NOT NULL,
-  `cliente_idCliente` INT(11) NOT NULL,
-  `detallePedido_idDetallePedido` INT(11) NOT NULL,
-  PRIMARY KEY (`idPedido`),
-  INDEX `fk_pedido_cliente1_idx` (`cliente_idCliente` ASC) VISIBLE,
-  INDEX `fk_pedido_detallePedido1_idx` (`detallePedido_idDetallePedido` ASC) VISIBLE,
-  CONSTRAINT `fk_pedido_cliente1`
-    FOREIGN KEY (`cliente_idCliente`)
-    REFERENCES `GlobalMart`.`cliente` (`idCliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_pedido_detallePedido1`
-    FOREIGN KEY (`detallePedido_idDetallePedido`)
-    REFERENCES `GlobalMart`.`detallePedido` (`idDetallePedido`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-CREATE TABLE IF NOT EXISTS `GlobalMart`.`cliente` (
+CREATE TABLE IF NOT EXISTS `Globlmart`.`Cliente` (
   `idCliente` INT(11) NOT NULL AUTO_INCREMENT,
   `tipoCliente` ENUM('particular', 'empresa') NOT NULL,
-  `nombreCliente` VARCHAR(50) NOT NULL,
+  `nombreCliente` VARCHAR(45) NOT NULL,
   `preferenciaDePago` ENUM('MasterCard', 'Visa') NULL DEFAULT NULL,
   `telefonoCliente` INT(11) NULL DEFAULT NULL,
   `correoCliente` VARCHAR(45) NULL DEFAULT NULL,
@@ -79,13 +56,35 @@ CREATE TABLE IF NOT EXISTS `GlobalMart`.`cliente` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE TABLE IF NOT EXISTS `GlobalMart`.`detallePedido` (
+CREATE TABLE IF NOT EXISTS `Globlmart`.`Pedido` (
+  `idPedido` INT(11) NOT NULL AUTO_INCREMENT,
+  `idProducto` INT(11) NOT NULL,
+  `fechaDePedido` DATE NOT NULL,
+  `estadoDePedido` ENUM('preparando', 'reparto', 'entregado') NOT NULL,
+  `idCliente` INT(11) NOT NULL,
+  PRIMARY KEY (`idPedido`),
+  INDEX `fk_Pedido_Cliente1_idx` (`idCliente` ASC) VISIBLE,
+  CONSTRAINT `fk_Pedido_Cliente1`
+    FOREIGN KEY (`idCliente`)
+    REFERENCES `Globlmart`.`Cliente` (`idCliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `Globlmart`.`DetallePedido` (
   `idDetallePedido` INT(11) NOT NULL AUTO_INCREMENT,
-  `idPedido` INT(11) NOT NULL,
   `idProducto` INT(11) NOT NULL,
   `cantidad` INT(11) NOT NULL,
-  `direccionEntrega` TEXT NULL DEFAULT NULL,
-  PRIMARY KEY (`idDetallePedido`))
+  `direccionEntrega` MEDIUMTEXT NOT NULL,
+  `idPedido` INT(11) NOT NULL,
+  PRIMARY KEY (`idDetallePedido`),
+  INDEX `fk_DetallePedido_Pedido1_idx` (`idPedido` ASC) VISIBLE,
+  CONSTRAINT `fk_DetallePedido_Pedido1`
+    FOREIGN KEY (`idPedido`)
+    REFERENCES `Globlmart`.`Pedido` (`idPedido`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -93,4 +92,3 @@ DEFAULT CHARACTER SET = utf8;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-

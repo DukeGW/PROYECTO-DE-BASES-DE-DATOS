@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `Pago` (
   `idPedido` INT NOT NULL,
   `fechaPago` DATE NOT NULL,
   `monto` DECIMAL(10,2) NOT NULL,
-  `metodoPago` ENUM('MasterCard', 'Visa', 'Transferencia', 'PayPal') NOT NULL,
+  `metodoPago` ENUM('MasterCard', 'Visa') NOT NULL,
   PRIMARY KEY (`idPago`),
   INDEX `fk_Pago_Pedido_idx` (`idPedido` ASC),
   CONSTRAINT `fk_Pago_Pedido`

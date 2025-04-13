@@ -24,7 +24,7 @@ SELECT * FROM globalmart.cliente;
 
 
 # Luego el PRODUCTOS
-INSERT INTO globalmart.producto(idProveedor,nombreProducto, fecchaCaducidad, stock, precioProducto)
+INSERT INTO globalmart.producto(idProveedor,nombreProducto, fechaCaducidad, stock, precioProducto)
 VALUES
 ( 1, 'Mochila de viaje', null, 32, 49.99),
 ( 1, 'Fertilizante plantas aromáticas', '2027-09-17', 123, 6.65),
@@ -61,3 +61,4 @@ VALUE
 (7, 6, 'entregado', 6);
 
 SELECT * FROM globalmart.detallepedido;
+ 

@@ -68,7 +68,7 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `Globalmart`.`Producto` (
   `idProducto` INT NOT NULL AUTO_INCREMENT,
   `nombreProducto` VARCHAR(45) NOT NULL,
-  `fecchaCaducidad` DATE NULL DEFAULT NULL,
+  `fechaCaducidad` DATE NULL DEFAULT NULL,
   `stock` INT NOT NULL,
   `precioProducto` DECIMAL(10,2) NOT NULL,
   `idProveedor` INT NOT NULL,

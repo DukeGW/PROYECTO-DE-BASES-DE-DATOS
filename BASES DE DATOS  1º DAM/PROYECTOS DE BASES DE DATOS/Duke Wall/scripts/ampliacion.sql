@@ -28,7 +28,5 @@ CREATE TABLE IF NOT EXISTS `Pago` (
   CONSTRAINT `fk_Pago_Pedido`
     FOREIGN KEY (`idPedido`)
     REFERENCES `Pedido` (`idPedido`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
-) ENGINE = InnoDB DEFAULT CHARSET=utf8;
+    );
     

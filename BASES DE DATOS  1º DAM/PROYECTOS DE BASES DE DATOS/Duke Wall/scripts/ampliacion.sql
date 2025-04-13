@@ -8,7 +8,7 @@ ALTER TABLE cliente
   
   #Tambien añadiremos el estado del pago en la tabla de pedido
   ALTER TABLE pedido
-  ADD COLUMN estadoPgo ENUM('pendiente', 'pagado', 'cancelado') NOT NULL;
+  ADD COLUMN estadoPago ENUM('pendiente', 'pagado', 'cancelado') NOT NULL;
   
   
   # Luego es super importante añadir una feacha de estimación de la entrega, que lo añadiremos en la tabla de detallepedido

@@ -1,39 +1,49 @@
-📘PROYECTO DE BASES DE DATOS - DUKE WALL
+# 📘 PROYECTO DE BASES DE DATOS - DUKE WALL
 
-Descripción
-Para este proyecto hemos elegido el Caso Práctico 2: Sistema de Gestión de Compras para GlobalMart Ltda.
+## 📌 Descripción
+
+Para este proyecto hemos elegido el **Caso Práctico 2: Sistema de Gestión de Compras para GlobalMart Ltda.**  
 Nuestro objetivo es diseñar e implementar un sistema que administre de manera eficiente el proceso de compras de la empresa, utilizando una base de datos relacional como núcleo del sistema.
 
-Este sistema permitirá registrar proveedores, gestionar órdenes de compra, productos y controlar el historial de adquisiciones, facilitando así la toma de decisiones dentro de la organización.
+Este sistema permite registrar proveedores, gestionar órdenes de compra, productos y controlar el historial de adquisiciones, facilitando así la toma de decisiones dentro de la organización.
 
-🛠️ Tecnologías utilizadas
+---
 
-MySQL – Motor de base de datos relacional.
+## 🛠️ Tecnologías utilizadas
 
-MySQL Workbench – Herramienta para diseño y gestión de la base de datos.
+- **MySQL** – Motor de base de datos relacional.  
+- **MySQL Workbench** – Herramienta para diseño y gestión de la base de datos.  
+- **draw.io** – Para el modelado del Diagrama Entidad-Relación (DER).  
 
-draw.io – Para el modelado del Diagrama Entidad-Relación (DER).
+---
 
-⚙️ Instalación y configuración
+## ⚙️ Instalación y configuración
 
-Abre MySQL Workbench y ejecuta los scripts en el siguiente orden:
+1. Abre **MySQL Workbench** y ejecuta los scripts en el siguiente orden:
 
-Script creacion.sql – Crea la base de datos y las tablas.
+   - `creacion.sql` – Crea la base de datos y las tablas.
+   - `insercion.sql` – Inserta los datos iniciales.
+   - `consultas.sql` – Contiene consultas útiles para explorar la base.
+   - `ampliacion.sql` – Agrega modificaciones o nuevas estructuras al modelo.
+   - `vistas-triggers.sql` – Define vistas y triggers que automatizan ciertas acciones.
 
-Script insercion.sql – Inserta los datos iniciales.
+2. (Opcional) Abre el archivo `Modelo conceptual.drawio.xml` para visualizar el modelo conceptual completo.
 
-Script consultas.sql – Contiene consultas útiles para explorar la base.
+✅ ¡Listo!🎉
 
-Script ampliacion.sql – Agrega modificaciones o nuevas estructuras al modelo.
+---
+## 🙋‍♂️ Autor
 
-Script triggers.sql – Define los triggers que automatizan ciertas acciones.
+**Duke Wall**  
+Estudiante de [Nombre de tu universidad]  
+Apasionado por bases de datos, sistemas y desarrollo backend.  
+GitHub: [@DukeGW](https://github.com/DukeGW)
 
-(Opcional) Abre el archivo del modelo conceptual (Modelo Conceptual.drawio) para visualizar la estructura de alto nivel.
+-----
 
-Listo 🎉.
+## 📂 Estructura del proyecto
 
-📂 Estructura del proyecto
-
+```plaintext
 📁 Duke Wall/
 ├── 📂 capturas/
 │   ├── INSERCION - TABLA PEDIDO.png
@@ -42,8 +52,8 @@ Listo 🎉.
 │   ├── INSERCION - TABLA PROVEEDOR.png
 │   ├── INSERCION - TABLAS DETALLEPEDIDO.png
 │   ├── Modelo conceptual.png
-│   ├── Modelo relacional+ampliaciones.png
 │   ├── Modelo relacional.png
+│   ├── Modelo relacional+ampliaciones.png
 │   └── README.md
 ├── 📂 recursos/
 │   └── README.md
@@ -52,13 +62,8 @@ Listo 🎉.
 │   ├── ampliacion.sql
 │   ├── consultas.sql
 │   ├── creacion.sql
-│   ├── incersion.sql
+│   ├── insercion.sql
 │   └── vistas-triggers.sql
 ├── Informe GlobalMart.md
 └── README.md
-
-
-🙋‍♂️ Autor
-Duke Wall – @DukeGW
-
 

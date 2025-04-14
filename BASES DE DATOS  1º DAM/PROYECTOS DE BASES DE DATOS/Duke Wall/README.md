@@ -1,6 +1,6 @@
-#📘PROYECTO DE BASES DE DATOS - DUKE WALL
+📘PROYECTO DE BASES DE DATOS - DUKE WALL
 
-#Descripción
+Descripción
 Para este proyecto hemos elegido el Caso Práctico 2: Sistema de Gestión de Compras para GlobalMart Ltda.
 Nuestro objetivo es diseñar e implementar un sistema que administre de manera eficiente el proceso de compras de la empresa, utilizando una base de datos relacional como núcleo del sistema.
 
@@ -34,9 +34,31 @@ Listo 🎉.
 
 📂 Estructura del proyecto
 
-📁 Duke Wall/ ├── 📂 scripts/ ├── 📄Modelo conceptual.drawio.xml │├── 📄 ampliacion.sql │ ├── 📄 consultas.sql │  ├── 📄 creacion.sql │ ├── 📄 incersion.sql │ └── 📄 vistas-triggers.sql 
+📁 Duke Wall/
+├── 📂 capturas/
+│   ├── INSERCION - TABLA PEDIDO.png
+│   ├── INSERCION - TABLAS CLIENTE.png
+│   ├── INSERCION - TABLA PRODUCTO.png
+│   ├── INSERCION - TABLA PROVEEDOR.png
+│   ├── INSERCION - TABLAS DETALLEPEDIDO.png
+│   ├── Modelo conceptual.png
+│   ├── Modelo relacional+ampliaciones.png
+│   ├── Modelo relacional.png
+│   └── README.md
+├── 📂 recursos/
+│   └── README.md
+├── 📂 script/
+│   ├── Modelo conceptual.drawio.xml
+│   ├── ampliacion.sql
+│   ├── consultas.sql
+│   ├── creacion.sql
+│   ├── incersion.sql
+│   └── vistas-triggers.sql
+├── Informe GlobalMart.md
+└── README.md
 
 
-
+🙋‍♂️ Autor
+Duke Wall – @DukeGW
 
 

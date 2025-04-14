@@ -5,7 +5,13 @@
 #PROVEEDOR
 INSERT INTO globalmart.proveedor (cif, correo, numeroDeContacto, direccionProveedor) 
 VALUE
-('B98742356', 'dwall@globalmart.com', 697654291, 'C. Aguere, 17, 38005 Santa Cruz de Tenerife');
+('B98742356', 'dwall@meandplants.com', 697654291, 'C. Aguere, 17, 38005 Santa Cruz de Tenerife'),
+('B12569878','med@surfsup.com', 679505439, 'Av. de San Sebastián, 152, 38005 Santa Cruz de Tenerife'),
+('B94756357', 'geeks@general.com', 679452863, 'C. Nava y Grimon, 18, 38201 La Laguna, Santa Cruz de Tenerife'),
+('B47986542', 'stanley@operations.com', 988745712, 'Polígono Industrial Granadilla, PARCELA, 62, A, 38619, Santa Cruz de Tenerife'),
+('B7856+635', 'ikea@canariastnf.com', 634687821, 'Parque Comercial, C. Aceviño, 9, 38205 La Laguna, Santa Cruz de Tenerife');
+
+ 
 
 SELECT * FROM globalmart.proveedor;
 
@@ -26,14 +32,14 @@ SELECT * FROM globalmart.cliente;
 # Luego el PRODUCTOS
 INSERT INTO globalmart.producto(idProveedor,nombreProducto, fechaCaducidad, stock, precioProducto)
 VALUES
-( 1, 'Mochila de viaje', null, 32, 49.99),
+( 5, 'Mochila de viaje', null, 32, 49.99),
 ( 1, 'Fertilizante plantas aromáticas', '2027-09-17', 123, 6.65),
-( 1, 'Tabla de surf', null, 5, 120),
-( 1, 'Llavero de StarWars', null, 0, 5),
-( 1, 'Stannley Cup', null, 436, 33.79),
-( 1, 'Vela aroma Oakwood', '2030-12-04', 12, 12.50),
-( 1, 'Tira de luces LED', null, 178, 9.98),
-( 1, 'Juego de mesa CATAN', null, 2, 80);
+( 2, 'Tabla de surf', null, 5, 120),
+( 3, 'Llavero de StarWars', null, 0, 5),
+( 4, 'Stannley Cup', null, 436, 33.79),
+( 5, 'Vela aroma Oakwood', '2030-12-04', 12, 12.50),
+( 5, 'Tira de luces LED', null, 178, 9.98),
+( 3, 'Juego de mesa CATAN', null, 2, 80);
 
 SELECT * FROM globalmart.producto;
 

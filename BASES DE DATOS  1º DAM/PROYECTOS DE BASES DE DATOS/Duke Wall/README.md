@@ -32,5 +32,11 @@ Script triggers.sql – Define los triggers que automatizan ciertas acciones.
 
 Listo 🎉.
 
+📂 Estructura del proyecto
+
+📁 Duke Wall/ ├── 📂 scripts/ ├── 📄Modelo conceptual.drawio.xml │├── 📄 ampliacion.sql │ ├── 📄 consultas.sql │  ├── 📄 creacion.sql │ ├── 📄 incersion.sql │ └── 📄 vistas-triggers.sql 
+
+
+
 
 

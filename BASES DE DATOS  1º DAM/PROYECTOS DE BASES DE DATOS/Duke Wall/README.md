@@ -16,8 +16,6 @@ draw.io – Para el modelado del Diagrama Entidad-Relación (DER).
 
 ⚙️ Instalación y configuración
 
-
-
 Abre MySQL Workbench y ejecuta los scripts en el siguiente orden:
 
 Script creacion.sql – Crea la base de datos y las tablas.
@@ -33,3 +31,6 @@ Script triggers.sql – Define los triggers que automatizan ciertas acciones.
 (Opcional) Abre el archivo del modelo conceptual (Modelo Conceptual.drawio) para visualizar la estructura de alto nivel.
 
 Listo 🎉.
+
+
+

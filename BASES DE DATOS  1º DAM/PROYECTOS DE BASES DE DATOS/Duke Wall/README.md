@@ -52,9 +52,11 @@ GitHub: [@DukeGW](https://github.com/DukeGW)
 │   ├── INSERCION - TABLA PROVEEDOR.png
 │   ├── INSERCION - TABLAS DETALLEPEDIDO.png
 │   ├── Modelo conceptual.png
-│   ├── Modelo relacional.png
 │   ├── Modelo relacional+ampliaciones.png
-│   └── README.md
+│   ├── Modelo relacional.png
+│   ├── TRIGGER ACTUALIZACION ESTADO PAGO.png
+│   ├── TRIGGER ESTADO DE PEDIDO.png
+│   └── TRIGGER VERIFIA EL STOCK.png
 ├── 📂 recursos/
 │   └── README.md
 ├── 📂 script/

@@ -6,7 +6,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 CREATE SCHEMA IF NOT EXISTS `Globalmart` DEFAULT CHARACTER SET utf8 ;
 
 CREATE TABLE IF NOT EXISTS `Globalmart`.`Proveedor` (
-  `idProveedor` INT(11) NOT NULL,
+  `idProveedor` INT(11) NOT NULL AUTO_INCREMENT,
   `cif` VARCHAR(10) NOT NULL,
   `correo` VARCHAR(25) NOT NULL,
   `numeroDeContacto` INT(11) NOT NULL,
@@ -18,7 +18,7 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `Globalmart`.`Producto` (
   `idProducto` INT(11) NOT NULL AUTO_INCREMENT,
   `nombreProducto` VARCHAR(45) NOT NULL,
-  `fecchaCaducidad` DATE NULL DEFAULT NULL,
+  `fechaCaducidad` DATE NULL DEFAULT NULL,
   `stock` INT(11) NOT NULL,
   `precioProducto` DECIMAL NOT NULL,
   `idProveedor` INT(11) NOT NULL,

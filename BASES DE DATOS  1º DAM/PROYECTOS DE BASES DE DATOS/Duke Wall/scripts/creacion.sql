@@ -1,9 +1,16 @@
+
+
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
-CREATE SCHEMA IF NOT EXISTS `Globalmart` DEFAULT CHARACTER SET utf8 ;
 
+CREATE SCHEMA IF NOT EXISTS `Globalmart` DEFAULT CHARACTER SET utf8 ;
+USE `Globalmart` ;
+
+-- -----------------------------------------------------
+-- Table `Globalmart`.`Proveedor`
+-- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Globalmart`.`Proveedor` (
   `idProveedor` INT(11) NOT NULL AUTO_INCREMENT,
   `cif` VARCHAR(10) NOT NULL,
@@ -14,6 +21,10 @@ CREATE TABLE IF NOT EXISTS `Globalmart`.`Proveedor` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+
+-- -----------------------------------------------------
+-- Table `Globalmart`.`Cliente`
+-- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Globalmart`.`Cliente` (
   `idCliente` INT(11) NOT NULL AUTO_INCREMENT,
   `tipoCliente` ENUM('particular', 'empresa') NOT NULL,
@@ -25,6 +36,10 @@ CREATE TABLE IF NOT EXISTS `Globalmart`.`Cliente` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+
+-- -----------------------------------------------------
+-- Table `Globalmart`.`Pedido`
+-- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Globalmart`.`Pedido` (
   `idPedido` INT(11) NOT NULL AUTO_INCREMENT,
   `idProducto` INT(11) NOT NULL,
@@ -41,6 +56,10 @@ CREATE TABLE IF NOT EXISTS `Globalmart`.`Pedido` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+
+-- -----------------------------------------------------
+-- Table `Globalmart`.`Producto`
+-- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Globalmart`.`Producto` (
   `idProducto` INT(11) NOT NULL AUTO_INCREMENT,
   `nombreProducto` VARCHAR(45) NOT NULL,
@@ -65,8 +84,12 @@ CREATE TABLE IF NOT EXISTS `Globalmart`.`Producto` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+
+-- -----------------------------------------------------
+-- Table `Globalmart`.`DetallePedido`
+-- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Globalmart`.`DetallePedido` (
-  `idDetallePedido` INT(11) NOT NULL AUTO_INCREMENT,
+  `idDetallePedido` INT NOT NULL AUTO_INCREMENT,
   `idProducto` INT(11) NOT NULL,
   `cantidad` INT(11) NOT NULL,
   `estadoDePedido` ENUM('preparando', 'reparto', 'entregado') NOT NULL,

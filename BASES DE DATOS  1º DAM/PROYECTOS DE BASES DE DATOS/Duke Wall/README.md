@@ -46,10 +46,10 @@ GitHub: [@DukeGW](https://github.com/DukeGW)
 ```plaintext
 📁 Duke Wall/
 ├── 📂 capturas/
-│   ├── INSERCION - TABLA PEDIDO.png
-│   ├── INSERCION - TABLAS CLIENTE.png
-│   ├── INSERCION - TABLA PRODUCTO.png
+│   ├── INSERCION - TABLA CLIENTE.png
+│   ├── INSERCION - TABLAS PEDIDO.png
 │   ├── INSERCION - TABLA PROVEEDOR.png
+│   ├── INSERCION - TABLA PRODUCTO.png
 │   ├── INSERCION - TABLAS DETALLEPEDIDO.png
 │   ├── Modelo conceptual.png
 │   ├── Modelo relacional+ampliaciones.png

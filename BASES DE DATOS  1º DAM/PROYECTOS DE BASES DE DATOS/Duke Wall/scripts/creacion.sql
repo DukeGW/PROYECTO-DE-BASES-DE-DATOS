@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `Globlmart`.`Producto` (
   `stock` INT(11) NOT NULL,
   `precioProducto` DECIMAL NOT NULL,
   `idProveedor` INT(11) NOT NULL,
-  `idPedido` INT(11) NOT NULL,
+  `idPedido` INT(11),
   PRIMARY KEY (`idProducto`),
   INDEX `fk_Producto_Proveedor_idx` (`idProveedor` ASC) VISIBLE,
   INDEX `fk_Producto_Pedido1_idx` (`idPedido` ASC) VISIBLE,

@@ -3,7 +3,6 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 CREATE SCHEMA IF NOT EXISTS `Globalmart` DEFAULT CHARACTER SET utf8 ;
-USE `Globalmart` ;
 
 CREATE TABLE IF NOT EXISTS `Globalmart`.`Proveedor` (
   `idProveedor` INT(11) NOT NULL AUTO_INCREMENT,
@@ -15,7 +14,6 @@ CREATE TABLE IF NOT EXISTS `Globalmart`.`Proveedor` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-
 CREATE TABLE IF NOT EXISTS `Globalmart`.`Cliente` (
   `idCliente` INT(11) NOT NULL AUTO_INCREMENT,
   `tipoCliente` ENUM('particular', 'empresa') NOT NULL,
@@ -26,7 +24,6 @@ CREATE TABLE IF NOT EXISTS `Globalmart`.`Cliente` (
   PRIMARY KEY (`idCliente`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
-
 
 CREATE TABLE IF NOT EXISTS `Globalmart`.`Pedido` (
   `idPedido` INT(11) NOT NULL AUTO_INCREMENT,
@@ -43,7 +40,6 @@ CREATE TABLE IF NOT EXISTS `Globalmart`.`Pedido` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
-
 
 CREATE TABLE IF NOT EXISTS `Globalmart`.`Producto` (
   `idProducto` INT(11) NOT NULL AUTO_INCREMENT,
@@ -69,24 +65,25 @@ CREATE TABLE IF NOT EXISTS `Globalmart`.`Producto` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-
 CREATE TABLE IF NOT EXISTS `Globalmart`.`DetallePedido` (
   `idDetallePedido` INT(11) NOT NULL,
   `idProducto` INT(11) NOT NULL,
   `cantidad` INT(11) NOT NULL,
   `estadoDePedido` ENUM('preparando', 'reparto', 'entregado') NOT NULL,
+  `idPedido` INT(11) NOT NULL,
   PRIMARY KEY (`idDetallePedido`),
+  INDEX `fk_DetallePedido_Pedido1_idx` (`idPedido` ASC) VISIBLE,
   CONSTRAINT `fk_DetallePedido_Pedido1`
-    FOREIGN KEY (`idDetallePedido`)
+    FOREIGN KEY (`idPedido`)
     REFERENCES `Globalmart`.`Pedido` (`idPedido`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION
-)
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
-
 SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

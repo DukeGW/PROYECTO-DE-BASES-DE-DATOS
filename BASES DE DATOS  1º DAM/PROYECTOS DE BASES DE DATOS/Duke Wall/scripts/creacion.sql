@@ -66,13 +66,13 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 CREATE TABLE IF NOT EXISTS `Globalmart`.`DetallePedido` (
-  `idDetallePedido` INT(11) NOT NULL,
+  `idDetallePedido` INT(11) NOT NULL AUTO_INCREMENT,
   `idProducto` INT(11) NOT NULL,
   `cantidad` INT(11) NOT NULL,
   `estadoDePedido` ENUM('preparando', 'reparto', 'entregado') NOT NULL,
   `idPedido` INT(11) NOT NULL,
-  PRIMARY KEY (`idDetallePedido`),
   INDEX `fk_DetallePedido_Pedido1_idx` (`idPedido` ASC) VISIBLE,
+  PRIMARY KEY (`idDetallePedido`),
   CONSTRAINT `fk_DetallePedido_Pedido1`
     FOREIGN KEY (`idPedido`)
     REFERENCES `Globalmart`.`Pedido` (`idPedido`)
@@ -83,7 +83,5 @@ DEFAULT CHARACTER SET = utf8;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

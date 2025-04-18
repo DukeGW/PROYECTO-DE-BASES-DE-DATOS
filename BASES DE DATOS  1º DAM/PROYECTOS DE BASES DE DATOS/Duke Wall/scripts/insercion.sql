@@ -46,7 +46,7 @@ SELECT * FROM globalmart.producto;
 
 # El PEDIDO
 
-INSERT INTO globalmart.pedido (fechaDePedido, direccionEntrega, idCliente)
+INSERT INTO globalmart.pedido (, fechaDePedido, direccionEntrega, idCliente)
 VALUE
 ('2025-02-04', 'Calle Adan Martin, 13, 38005', 3),
 ('2025-01-05', 'Calle del Agua, 5, planta 2, puerta h', 1),

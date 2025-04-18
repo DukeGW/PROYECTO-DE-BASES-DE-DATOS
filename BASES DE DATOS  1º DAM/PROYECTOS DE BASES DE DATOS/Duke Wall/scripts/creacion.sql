@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `Globalmart`.`Producto` (
   `nombreProducto` VARCHAR(45) NOT NULL,
   `fechaCaducidad` DATE NULL DEFAULT NULL,
   `stock` INT(11) NOT NULL,
-  `precioProducto` DECIMAL NOT NULL,
+  `precioProducto` DECIMAL(10,2) NOT NULL,
   `idProveedor` INT(11) NOT NULL,
   `idPedido` INT(11),
   PRIMARY KEY (`idProducto`),

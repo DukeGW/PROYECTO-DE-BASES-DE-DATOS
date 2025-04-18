@@ -97,3 +97,6 @@ SELECT estadoGeneral FROM Pedido WHERE idPedido = 5;
 
 SHOW TRIGGERS FROM Globalmart;
 
+
+
+

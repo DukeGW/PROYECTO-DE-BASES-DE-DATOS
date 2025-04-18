@@ -4,7 +4,7 @@ USE globalmart;
 
 #Añadiremos una fecha de registro en la tabla de cliente
 ALTER TABLE cliente
-  ADD COLUMN fechaRegistro DATE NOT NULL;
+  ADD COLUMN fechaRegistro DATE;
   
   #Tambien añadiremos el estado del pago en la tabla de pedido
   ALTER TABLE pedido

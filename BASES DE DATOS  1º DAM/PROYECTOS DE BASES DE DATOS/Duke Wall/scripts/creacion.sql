@@ -75,7 +75,6 @@ CREATE TABLE IF NOT EXISTS `Globalmart`.`DetallePedido` (
   `idProducto` INT(11) NOT NULL,
   `cantidad` INT(11) NOT NULL,
   `estadoDePedido` ENUM('preparando', 'reparto', 'entregado') NOT NULL,
-  `idPedido` INT(11) NOT NULL,
   PRIMARY KEY (`idDetallePedido`),
   CONSTRAINT `fk_DetallePedido_Pedido1`
     FOREIGN KEY (`idDetallePedido`)

@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `Globalmart`.`Producto` (
   `stock` INT(11) NOT NULL,
   `precioProducto` DECIMAL(10,2) NOT NULL,
   `idProveedor` INT(11) NOT NULL,
-  `idPedido` INT(11),
+  `idPedido` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`idProducto`),
   INDEX `fk_Producto_Proveedor_idx` (`idProveedor` ASC) VISIBLE,
   INDEX `fk_Producto_Pedido1_idx` (`idPedido` ASC) VISIBLE,
@@ -71,16 +71,17 @@ CREATE TABLE IF NOT EXISTS `Globalmart`.`DetallePedido` (
   `idProducto` INT(11) NOT NULL,
   `cantidad` INT(11) NOT NULL,
   `estadoDePedido` ENUM('preparando', 'reparto', 'entregado') NOT NULL,
-  `idPedido` INT(11) NOT NULL,
+  `Pedido_idPedido` INT(11) NOT NULL,
   PRIMARY KEY (`idDetallePedido`),
-  INDEX `fk_DetallePedido_Pedido1_idx` (`idPedido` ASC) VISIBLE,
+  INDEX `fk_DetallePedido_Pedido1_idx` (`Pedido_idPedido` ASC) VISIBLE,
   CONSTRAINT `fk_DetallePedido_Pedido1`
-    FOREIGN KEY (`idPedido`)
+    FOREIGN KEY (`Pedido_idPedido`)
     REFERENCES `Globalmart`.`Pedido` (`idPedido`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

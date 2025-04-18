@@ -94,9 +94,46 @@ WHERE idPedido = 5;
 SELECT estadoGeneral FROM Pedido WHERE idPedido = 5;
 
 
+#Estado de cada pedido agrupado por cliente
 
-SHOW TRIGGERS FROM Globalmart;
+CREATE OR REPLACE VIEW vista_estado_pedidos_por_cliente AS
+SELECT cliente.idCliente, cliente.nombreCliente, pedido.idPedido, pedido.estadoGeneral, pedido.estadoPago
+FROM cliente
+JOIN pedido ON cliente.idCliente = pedido.idCliente;
 
+SELECT * FROM vista_estado_pedidos_por_cliente;
 
+#Resumen completo de cada pedido con total en moneda
 
+CREATE OR REPLACE VIEW vista_resumen_completo_pedidos AS
+SELECT pedido.idPedido, cliente.nombreCliente, pedido.fechaDePedido, SUM(detallePedido.cantidad * producto.precioProducto) AS totalPedido, pedido.estadoPago, pedido.estadoGeneral
+FROM pedido
+JOIN cliente ON pedido.idCliente = cliente.idCliente
+JOIN detallePedido ON pedido.idPedido = detallePedido.idPedido
+JOIN producto ON detallePedido.idProducto = producto.idProducto
+GROUP BY pedido.idPedido;
 
+SELECT * FROM vista_resumen_completo_pedidos;
+
+#Clientes que no han realizado ningún pedido
+
+CREATE OR REPLACE VIEW vista_clientes_sin_pedidos AS
+SELECT cliente.idCliente, cliente.nombreCliente, cliente.correoCliente
+FROM cliente
+LEFT JOIN pedido ON cliente.idCliente = pedido.idCliente
+WHERE pedido.idPedido IS NULL;
+
+SELECT * FROM vista_clientes_sin_pedidos;
+
+#Productos que actualmente no tienen stock disponible
+
+CREATE OR REPLACE VIEW vista_productos_sin_stock_disponible AS
+SELECT producto.idProducto, producto.nombreProducto, producto.stock
+FROM producto
+WHERE producto.stock = 0;
+
+SELECT * FROM vista_productos_sin_stock_disponible;
+
+SHOW TRIGGERS FROM globalmart;
+
+SHOW FULL TABLES IN globalmart WHERE TABLE_TYPE = 'VIEW';

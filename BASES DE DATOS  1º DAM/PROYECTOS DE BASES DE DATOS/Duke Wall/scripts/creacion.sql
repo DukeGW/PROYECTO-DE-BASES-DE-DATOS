@@ -71,20 +71,21 @@ DEFAULT CHARACTER SET = utf8;
 
 
 CREATE TABLE IF NOT EXISTS `Globalmart`.`DetallePedido` (
-  `idDetallePedido` INT(11) NOT NULL AUTO_INCREMENT,
+  `idDetallePedido` INT(11) NOT NULL,
   `idProducto` INT(11) NOT NULL,
   `cantidad` INT(11) NOT NULL,
   `estadoDePedido` ENUM('preparando', 'reparto', 'entregado') NOT NULL,
-  `Pedido_idPedido` INT(11) NOT NULL,
+  `idPedido` INT(11) NOT NULL,
   PRIMARY KEY (`idDetallePedido`),
-  INDEX `fk_DetallePedido_Pedido1_idx` (`Pedido_idPedido` ASC) VISIBLE,
   CONSTRAINT `fk_DetallePedido_Pedido1`
-    FOREIGN KEY (`Pedido_idPedido`)
+    FOREIGN KEY (`idDetallePedido`)
     REFERENCES `Globalmart`.`Pedido` (`idPedido`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE NO ACTION
+)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

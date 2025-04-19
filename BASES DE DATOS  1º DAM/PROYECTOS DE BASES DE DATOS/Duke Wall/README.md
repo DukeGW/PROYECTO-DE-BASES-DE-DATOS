@@ -46,17 +46,16 @@ GitHub: [@DukeGW](https://github.com/DukeGW)
 ```plaintext
 📁 Duke Wall/
 ├── 📂 capturas/
+│   ├── AMPLIACION.png
+│   ├── CONSULTAS.pdf
 │   ├── INSERCION - TABLA CLIENTE.png
-│   ├── INSERCION - TABLAS PEDIDO.png
-│   ├── INSERCION - TABLA PROVEEDOR.png
-│   ├── INSERCION - TABLA PRODUCTO.png
-│   ├── INSERCION - TABLAS DETALLEPEDIDO.png
-│   ├── Modelo conceptual.png
-│   ├── Modelo relacional+ampliaciones.png
-│   ├── Modelo relacional.png
-│   ├── TRIGGER ACTUALIZACION ESTADO PAGO.png
-│   ├── TRIGGER ESTADO DE PEDIDO.png
-│   └── TRIGGER VERIFIA EL STOCK.png
+│   ├── INSERCION - TABLA PEDIDO.png
+│   ├── INSERCION - TABLAS PRODUCTO.png
+│   ├── INSERCION - TABLAS PROVEEDOR.png
+│   ├── INSERCION - TABLA DETALLEPEDIDO.png
+│   ├── Modelo - Conceptual.png
+│   ├── Modelo - Relacional.png
+│   └── TRIGGER Y VISTAS.pdf
 ├── 📂 recursos/
 │   └── README.md
 ├── 📂 script/
@@ -66,6 +65,6 @@ GitHub: [@DukeGW](https://github.com/DukeGW)
 │   ├── creacion.sql
 │   ├── insercion.sql
 │   └── vistas-triggers.sql
-├── Informe GlobalMart.md
+├── INFORME Globalmart.md
 └── README.md
 

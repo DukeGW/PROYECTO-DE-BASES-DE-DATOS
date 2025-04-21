@@ -41,10 +41,10 @@ END;
 //
 DELIMITER ;
 
-SELECT idProducto, stock FROM producto WHERE idProducto = 11;
+SELECT idProducto, stock FROM producto WHERE idProducto = 4;
 
 INSERT INTO detallepedido (idProducto, cantidad, estadoDePedido, idPedido)
-VALUES (11, 10, 'preparando', 1);
+VALUES (4, 10, 'preparando', 1);
 
 
 #Actualiza el estado de pedido cuando se entrega y aparece 'completado' 

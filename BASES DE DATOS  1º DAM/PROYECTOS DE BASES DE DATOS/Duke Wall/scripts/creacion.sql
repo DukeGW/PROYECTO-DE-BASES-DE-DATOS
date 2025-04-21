@@ -42,7 +42,6 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Globalmart`.`Pedido` (
   `idPedido` INT(11) NOT NULL AUTO_INCREMENT,
-  `idProducto` INT(11) NOT NULL,
   `fechaDePedido` DATE NOT NULL,
   `direccionEntrega` MEDIUMTEXT NOT NULL,
   `idCliente` INT(11) NOT NULL,
